@@ -196,6 +196,11 @@ class Command {
 
 		try {
 			$this->load_wordpress_with_template();
+			// phpcs:disable
+			global $allowedentitynames;
+			var_dump( 'just-test' );
+			var_dump( is_array( $allowedentitynames ) ? count( $allowedentitynames ) : $allowedentitynames );
+			// phpcs:enable
 		} catch ( Exception $e ) {
 			WP_CLI::warning( $e->getMessage() );
 		}
